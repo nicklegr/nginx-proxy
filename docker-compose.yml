@@ -1,5 +1,5 @@
 main:
-  image: jwilder/nginx-proxy
+  image: jwilder/nginx-proxy@sha256:4e6bae63dab0c4d3ebf3bbecbf5cd2700ca99db02e155efaa6e28baa14033bc8
   ports:
     - "80:80"
     - "443:443"
@@ -13,7 +13,7 @@ main:
   restart: always
 
 letsencrypt:
-  image: jrcs/letsencrypt-nginx-proxy-companion:v1.8.1
+  image: jrcs/letsencrypt-nginx-proxy-companion@sha256:b4ea30c189945da869a3450b8211a20ba8cddb2b24d9df7451ff7350430a0e72
   volumes:
     - ./certs:/etc/nginx/certs:rw
     - /var/run/docker.sock:/var/run/docker.sock:ro

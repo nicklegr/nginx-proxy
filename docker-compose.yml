@@ -10,7 +10,7 @@ main:
     - /var/run/docker.sock:/tmp/docker.sock:ro
   labels:
     - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
-  restart: always
+  restart: unless-stopped
 
 letsencrypt:
   image: jrcs/letsencrypt-nginx-proxy-companion@sha256:b4ea30c189945da869a3450b8211a20ba8cddb2b24d9df7451ff7350430a0e72
@@ -19,5 +19,4 @@ letsencrypt:
     - /var/run/docker.sock:/var/run/docker.sock:ro
   volumes_from:
     - main
-  restart: always
-
+  restart: unless-stopped

@@ -4,6 +4,7 @@ main:
     - "80:80"
     - "443:443"
   volumes:
+    - ./htpasswd:/etc/nginx/htpasswd
     - ./certs:/etc/nginx/certs:ro
     - /etc/nginx/vhost.d
     - /usr/share/nginx/html

@@ -20,6 +20,8 @@ services:
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion@sha256:f7ec0b1a7446f7781e2dcaadfbe46e5ba0832b7f4ffd8ea7ac2532c111df8477
+    environment:
+      DEFAULT_EMAIL: 
     volumes:
       - ./certs:/etc/nginx/certs:rw
       - /var/run/docker.sock:/var/run/docker.sock:ro
